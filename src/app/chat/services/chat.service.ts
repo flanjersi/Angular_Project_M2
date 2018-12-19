@@ -4,6 +4,10 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {of} from 'rxjs';
 
+
+/**
+ * Service to manipulate data of the chat
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +19,10 @@ export class ChatService {
     this.messages = new Array<Message>();
   }
 
+  /**
+   * Build an array of message from a json string
+   * @param resultats the json string who contains data of messages
+   */
   public buildMessages(resultats: Array<any>): Array<Message> {
     const messages = [];
     if (resultats != null) {
@@ -26,10 +34,14 @@ export class ChatService {
     return messages;
   }
 
+  /**
+   * Get messages from a web service RESTFul
+   */
   public getMessages(): Observable<Array<Message>> {
     return new Observable<Array<Message>>((observer) => {
 
-//      this.http.get<Array<any>>('https://jsonplaceholder.typicode.com/posts')
+      //Choose the web service
+      //this.http.get<Array<any>>('https://jsonplaceholder.typicode.com/posts')
       this.http.get<Array<any>>('http://localhost:3000/api/posts')
         .subscribe( (messages) => {
            this.messages = this.buildMessages(messages);
@@ -41,6 +53,10 @@ export class ChatService {
     });
   }
 
+  /**
+   * Add a message and return the new array of message
+   * @param message message who needed to insert in list of messages
+   */
   public addMessage(message: Message): Observable<Array<Message>>{
     this.messages.push(message);
     return of(this.messages); // angular 6

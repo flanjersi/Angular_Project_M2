@@ -7,8 +7,14 @@ import {Message} from '../models/message';
 })
 export class ChatFormulaireComponent implements OnInit {
 
+  /**
+   * The text property of the html form
+   */
  public texte: string;
 
+  /**
+   * The new message who has created by the user
+   */
  @Output() nouveauMessage: EventEmitter<Message>;
 
  constructor() {
@@ -19,6 +25,9 @@ export class ChatFormulaireComponent implements OnInit {
   this.texte = '';
  }
 
+  /**
+   * Function used to create a new message from a html form
+   */
  public envoyer(): void {
   const message = new Message();
   message.auteur = 'toto';

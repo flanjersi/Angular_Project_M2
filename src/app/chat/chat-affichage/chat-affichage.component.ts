@@ -8,6 +8,9 @@ import {Message} from '../models/message';
 })
 export class ChatAffichageComponent implements OnInit {
 
+  /**
+   * The messages to be displayed in the user interface in the list
+   */
   @Input() public messages: Array<Message>;
 
   constructor() { }
