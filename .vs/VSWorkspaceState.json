@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\chat",
+    "\\src\\app\\chat\\chat",
+    "\\src\\app\\chat\\chat-affichage",
+    "\\src\\app\\chat\\chat-element",
+    "\\src\\app\\chat\\chat-formulaire",
+    "\\src\\app\\chat\\models",
+    "\\src\\app\\chat\\services"
+  ],
+  "SelectedNode": "\\src\\app\\chat\\chat\\chat.component.html",
+  "PreviewInSolutionExplorer": false
+}

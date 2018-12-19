@@ -1,0 +1,8 @@
+<div id="chat">
+<app-chat-affichage [messages]="messages | async">
+</app-chat-affichage>
+</div>
+<br/>
+<div class="d-flex justify-content-center" id="formulaire">
+ <app-chat-formulaire (nouveauMessage)="gererNouveauMessage($event)"></app-chat-formulaire>
+</div>
